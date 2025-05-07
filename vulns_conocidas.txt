@@ -1,5 +1,0 @@
-#https://www.computersecuritystudent.com/cgi-bin/CSS/process_request_v3.pl?HID=f213c73c216e2231c8f0d65f3d93ac18&TYPE=SUB
-CVE-2004-2687
-CVE-2007-2447
-CVE-2008-0166
-CVE-2009-1185
