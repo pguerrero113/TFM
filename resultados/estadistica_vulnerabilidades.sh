@@ -80,7 +80,7 @@ while IFS='/' read -r -u 3 modelo1 modelo2; do
             fi
           done < "$temp_file"
             
-          num_vuln=$(wc -l < "$vulns_conocidas_file")  
+          num_vuln=$(grep -v '^#' "$vulns_conocidas_file" | wc -l)
           FN=$((num_vuln - VP))
           if [ "$num_vuln" -eq 0 ]; then echo "    VP: [$VP (?%)]"; else echo "    VP: [$VP ($((($VP * 100 + $num_vuln/2) / $num_vuln))%)]"; fi
           if [ "$num_vuln" -eq 0 ]; then echo "    FN: [$FN (?%)]"; else echo "    FN: [$FN ($((($FN * 100 + $num_vuln/2) / $num_vuln))%)]"; fi
