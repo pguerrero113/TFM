@@ -86,8 +86,8 @@ while IFS='/' read -r -u 3 modelo1 modelo2; do
           if [ "$num_vuln" -eq 0 ]; then echo "    FN: [$FN (?%)]"; else echo "    FN: [$FN ($((($FN * 100 + $num_vuln/2) / $num_vuln))%)]"; fi
           if [ $((num_vuln+FP)) -eq 0 ]; then echo "    FP: [$FP (?%)]"; else echo "    FP: [$FP ($((($FP * 100 + $((num_vuln+FP))/2) / $((num_vuln+FP))))%)]"; fi
           
-          if [ $((VP+FP)) -eq 0 ]; then echo "    Precisión: [$VP (?%)]"; else echo "    Precisión: [$VP ($((($VP * 100 + $((VP+FP))/2) / $((VP+FP))))%)]"; fi
-          if [ $((VP+FN)) -eq 0 ]; then echo "    Recall: [$VP (?%)]"; else echo "    Recall: [$VP ($((($VP * 100 + $((VP+FN))/2) / $((VP+FN))))%)]"; fi
+          if [ $((VP+FP)) -eq 0 ]; then echo "    Precisión: [?%]"; else echo "    Precisión: [$((($VP * 100 + $((VP+FP))/2) / $((VP+FP))))%]"; fi
+          if [ $((VP+FN)) -eq 0 ]; then echo "    Recall: [?%]"; else echo "    Recall: [$((($VP * 100 + $((VP+FN))/2) / $((VP+FN))))%]"; fi
 
           rm "$temp_file"
         
